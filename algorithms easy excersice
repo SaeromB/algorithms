@@ -1,0 +1,24 @@
+# 최대공약수 구하기
+# 입력 a, b
+# 출력 a, b 의 최대공약수로 
+
+def gcd(a, b)
+# 두 수 중에 최솟값 구하기
+  i = min(a,b)
+  while True: 
+# a % == 0 은 a를 i로 나누었을때 나머지가 0 이면 a는 i로 나누어 떨어진다.
+    if a % i == 0 and b ==0:
+      return i
+    i = i - 1
+    
+print(gcd(1,5))
+
+# 유클리드 알고리즘
+# a와 b의 최대공약수는 'b' & ('a'를 'b'로 나눈 나머지) 의 최대공약수와 같습니다
+# 어떤 수와 0의 최대공약수는 자기 자신입니다. cf) gcd(n, 0) = n
+
+dec gcd(a, b):
+  if b == 0:
+    return a
+  return gcd(a, a%b)
+  
